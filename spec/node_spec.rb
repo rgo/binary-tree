@@ -47,10 +47,40 @@ describe Node do
   end
 
   context "on search" do
+    let(:tree) {
+      root = Node.new(9)
+      [4,15,6,12,17,2].each{ |v| root.insert(Node.new(v)) }
+      root
+    }
+
     it "should return nil if tree is not initialized" do
       empty_tree = Node.new
 
       empty_tree.search(42).should be_nil
+    end
+
+    it "should return bottom left node" do
+      node = tree.search(2)
+
+      node.left.should be_nil
+      node.right.should be_nil
+      node.data.should eq 2
+    end
+
+    it "should return bottom right node" do
+      node = tree.search(17)
+
+      node.left.should be_nil
+      node.right.should be_nil
+      node.data.should eq 17
+    end
+
+    it "should return top node" do
+      node = tree.search(9)
+      
+      node.left.should_not be_nil
+      node.right.should_not be_nil
+      node.data.should eq 9
     end
   end
 

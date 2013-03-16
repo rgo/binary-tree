@@ -24,5 +24,13 @@ class Node
 
   def search(node_data)
     return nil if data.nil?
+
+    if node_data == data
+      return self
+    elsif node_data < data
+      left.search(node_data)
+    elsif node_data > data
+      right.search(node_data)
+    end
   end
 end
