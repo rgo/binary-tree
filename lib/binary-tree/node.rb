@@ -5,4 +5,10 @@ class Node
     @data  = data
   end
 
+  def insert(node)
+    if data.nil?
+      self.data = node.data
+      return self
+    end
+  end
 end

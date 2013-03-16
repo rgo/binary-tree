@@ -8,4 +8,15 @@ describe Node do
       node.data.should eq 42
     end
   end
+
+  context "on insert" do
+    it "should be root if tree is not initialized(root data is nil)" do
+      empty_tree = Node.new
+      node       = Node.new(5)
+
+      empty_tree.insert(node)
+
+      empty_tree.data.should eq 5
+    end
+  end
 end
