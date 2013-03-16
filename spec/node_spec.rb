@@ -32,5 +32,17 @@ describe Node do
       tree.insert(node_left)
       tree.left.data.should eq(node_left.data)
     end
+
+    it "should be in right side if data is greater than parent's data" do
+      node_right = Node.new(12)
+      node_left  = Node.new(4)
+
+      tree.insert(node_left)
+      tree.right.should be_nil
+
+
+      tree.insert(node_right)
+      tree.right.data.should eq(node_right.data)
+    end
   end
 end

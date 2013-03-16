@@ -16,6 +16,9 @@ class Node
     if node.data < data
       self.left = Node.new if left.nil?
       self.left.insert(node)
+    elsif node.data > data
+      self.right = Node.new if right.nil?
+      self.right.insert(node)
     end
   end
 end
