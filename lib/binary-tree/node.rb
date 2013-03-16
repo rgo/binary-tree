@@ -21,4 +21,8 @@ class Node
       self.right.insert(node)
     end
   end
+
+  def search(node_data)
+    return nil if data.nil?
+  end
 end

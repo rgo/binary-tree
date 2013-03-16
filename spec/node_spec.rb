@@ -45,4 +45,13 @@ describe Node do
       tree.right.data.should eq(node_right.data)
     end
   end
+
+  context "on search" do
+    it "should return nil if tree is not initialized" do
+      empty_tree = Node.new
+
+      empty_tree.search(42).should be_nil
+    end
+  end
+
 end
