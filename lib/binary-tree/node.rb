@@ -1,6 +1,8 @@
 class Node
   attr_accessor :data, :left, :right
 
+  MODES = [:preorder, :inorder, :postorder]
+
   def initialize(data=nil)
     @data  = data
     @left  = nil
@@ -40,15 +42,11 @@ class Node
     end
   end
 
-  def to_a
+  def to_a(mode = :preorder)
     return nil if self.data.nil?
 
-    tree = []
-    tree << self.data
-    tree << self.left.to_a unless self.left.nil?
-    tree << self.right.to_a unless self.right.nil?
-
-    return tree
+    method_name = "to_a_" + (MODES.include?(mode) ? mode : :preorder).to_s
+    send(method_name)
   end
 
   protected
@@ -60,4 +58,12 @@ class Node
     node.data = node.left = node.right = nil
   end
 
+  def to_a_preorder
+    tree = []
+    tree << self.data
+    tree << self.left.to_a_preorder unless self.left.nil?
+    tree << self.right.to_a_preorder unless self.right.nil?
+
+    return tree
+  end
 end
