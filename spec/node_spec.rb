@@ -85,15 +85,29 @@ describe Node do
   end
 
   context "on destroy" do
+    let(:tree_values) { [4,15,6,12,17,2] } # Fixtures more or less
     let(:tree) {
       root = Node.new(9)
-      [4,15,6,12,17,2].each{ |v| root.insert(Node.new(v)) }
+      tree_values.each{ |v| root.insert(Node.new(v)) }
       root
     }
 
-    it "should empty the tree if destroy from root node" do
-      tree.destroy(9).should be_nil
-      tree.search(9).should be_nil
+    it "should empty the tree if destroy root node" do
+      tree.destroy(9)
+
+      tree_values.each do |node_data|
+        tree.search(node_data).should be_nil
+      end
+    end
+
+    it "should not be empty if only destroy a branch(specific node)" do
+      tree.destroy(15)
+
+      tree.search(15).should be_nil # Initial node
+      tree.search(12).should be_nil # Children node
+      tree.search(17).should be_nil # Children node
+      
+      tree.search(4).data.should eq 4    # Node in other branch
     end
   end
 
