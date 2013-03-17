@@ -77,4 +77,14 @@ class Node
 
     return tree
   end
+  #
+  # Post-order displays left node, root node and then right node
+  def to_a_postorder
+    tree = []
+    tree << self.left.to_a_postorder unless self.left.nil?
+    tree << self.right.to_a_postorder unless self.right.nil?
+    tree << self.data
+
+    return tree
+  end
 end

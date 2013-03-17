@@ -126,6 +126,9 @@ describe Node do
       tree.to_a(:inorder).should eq [[[2], 4, [6]], 9, [[12], 15, [17]]]
     end
 
+    it "should return an array in post-order (left, right and then root)" do
+      tree.to_a(:postorder).should eq [[[2], [6], 4], [[12], [17], 15], 9]
+    end
   end
 
 end
