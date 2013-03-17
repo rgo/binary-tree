@@ -118,9 +118,10 @@ describe Node do
       root
     }
 
-    it "should return an array in preorder (root, left and then right)" do
+    it "should return an array in pre-order (root, left and then right)" do
       tree.to_a.should eq [9, [4, [2], [6]], [15, [12], [17]]]
     end
+
   end
 
 end
