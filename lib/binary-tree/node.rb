@@ -58,6 +58,7 @@ class Node
     node.data = node.left = node.right = nil
   end
 
+  # Pre-order displays root node, left node and then right node
   def to_a_preorder
     tree = []
     tree << self.data
