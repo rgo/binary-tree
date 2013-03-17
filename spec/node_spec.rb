@@ -106,8 +106,20 @@ describe Node do
       tree.search(15).should be_nil # Initial node
       tree.search(12).should be_nil # Children node
       tree.search(17).should be_nil # Children node
-      
+
       tree.search(4).data.should eq 4    # Node in other branch
+    end
+  end
+
+  context "on print" do
+    let(:tree) {
+      root = Node.new(9)
+      [4,15,6,12,17,2].each{ |v| root.insert(Node.new(v)) }
+      root
+    }
+
+    it "should return an array in preorder (root, left and then right)" do
+      tree.to_a.should eq [9, [4, [2], [6]], [15, [12], [17]]]
     end
   end
 

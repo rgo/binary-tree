@@ -40,6 +40,17 @@ class Node
     end
   end
 
+  def to_a
+    return nil if self.data.nil?
+
+    tree = []
+    tree << self.data
+    tree << self.left.to_a unless self.left.nil?
+    tree << self.right.to_a unless self.right.nil?
+
+    return tree
+  end
+
   protected
 
   def destroy_node(node)
@@ -48,4 +59,5 @@ class Node
 
     node.data = node.left = node.right = nil
   end
+
 end
