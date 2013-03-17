@@ -13,9 +13,9 @@ Root nodes are greater than its children.
 Child nodes which are lesser than root node should be on the left side.
 Child nodes which are greater than root node should be on the right side.
 
-Features
---------
-  - [ ] Create a binary tree
-  - [ ] Search into binary tree
-  - [ ] Delete binary tree
+Features / TODO list
+--------------------
+  - [x] Create a binary tree
+  - [x] Search into binary tree
+  - [x] Delete binary tree
   - [ ] Displaying binary tree
