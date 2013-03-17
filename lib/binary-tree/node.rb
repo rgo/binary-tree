@@ -67,4 +67,14 @@ class Node
 
     return tree
   end
+
+  # In-order displays left node, root node and then right node
+  def to_a_inorder
+    tree = []
+    tree << self.left.to_a_inorder unless self.left.nil?
+    tree << self.data
+    tree << self.right.to_a_inorder unless self.right.nil?
+
+    return tree
+  end
 end
