@@ -33,4 +33,11 @@ class Node
       right.search(node_data)
     end
   end
+
+  def destroy(node_data)
+    left.destroy(node_data) unless left.nil?
+    right.destroy(node_data) unless right.nil?
+
+    self.data = self.left = self.right = nil
+  end
 end

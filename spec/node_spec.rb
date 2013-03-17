@@ -77,10 +77,23 @@ describe Node do
 
     it "should return top node" do
       node = tree.search(9)
-      
+
       node.left.should_not be_nil
       node.right.should_not be_nil
       node.data.should eq 9
+    end
+  end
+
+  context "on destroy" do
+    let(:tree) {
+      root = Node.new(9)
+      [4,15,6,12,17,2].each{ |v| root.insert(Node.new(v)) }
+      root
+    }
+
+    it "should empty the tree if destroy from root node" do
+      tree.destroy(9).should be_nil
+      tree.search(9).should be_nil
     end
   end
 
