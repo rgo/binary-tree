@@ -30,5 +30,6 @@ Features / TODO list
   - [x] Create a binary tree
   - [x] Search into binary tree
   - [x] Delete binary tree
-  - [ ] Displaying binary tree
+  - [x] Displaying binary tree as an array (pre-order, in-order and post-order)
+  - [ ] Displaying binary tree as an ascii tree
   - [ ] Refactor in a ruby-ish way
