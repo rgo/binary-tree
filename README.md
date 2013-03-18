@@ -19,3 +19,4 @@ Features / TODO list
   - [x] Search into binary tree
   - [x] Delete binary tree
   - [ ] Displaying binary tree
+  - [ ] Refactor in a ruby-ish way
