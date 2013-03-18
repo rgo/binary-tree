@@ -9,9 +9,21 @@ How binary tree works
 ---------------------
 Binary tree is composed by nodes. Nodes can have two child nodes and every child can have another children... to the infinite (more or less).
 
+
 Root nodes are greater than its children. 
+
 Child nodes which are lesser than root node should be on the left side.
+
 Child nodes which are greater than root node should be on the right side.
+
+(ascii)Graphical example:
+<pre>
+       _9_
+     _/   \_
+  _4_       _15_
+ /   \     /    \
+2     6   12    17
+</pre>
 
 Features / TODO list
 --------------------
