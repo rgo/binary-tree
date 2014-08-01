@@ -1,3 +1,3 @@
-source "https://rubygems.org"
+source 'https://rubygems.org'
 
-gem 'rspec', '2.13.0'
+gem 'rspec', '2.14.1'
