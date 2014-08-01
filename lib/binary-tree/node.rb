@@ -3,7 +3,7 @@ class Node
 
   MODES = [:preorder, :inorder, :postorder]
 
-  def initialize(data=nil)
+  def initialize(data = nil)
     @data  = data
     @left  = nil
     @right = nil
@@ -43,9 +43,9 @@ class Node
   end
 
   def to_a(mode = :preorder)
-    return nil if self.data.nil?
+    return nil if data.nil?
 
-    method_name = "to_a_" + (MODES.include?(mode) ? mode : :preorder).to_s
+    method_name = 'to_a_' + (MODES.include?(mode) ? mode : :preorder).to_s
     send(method_name)
   end
 
@@ -61,30 +61,30 @@ class Node
   # Pre-order displays root node, left node and then right node
   def to_a_preorder
     tree = []
-    tree << self.data
-    tree << self.left.to_a_preorder unless self.left.nil?
-    tree << self.right.to_a_preorder unless self.right.nil?
+    tree << data
+    tree << left.to_a_preorder unless left.nil?
+    tree << right.to_a_preorder unless right.nil?
 
-    return tree
+    tree
   end
 
   # In-order displays left node, root node and then right node
   def to_a_inorder
     tree = []
-    tree << self.left.to_a_inorder unless self.left.nil?
-    tree << self.data
-    tree << self.right.to_a_inorder unless self.right.nil?
+    tree << left.to_a_inorder unless left.nil?
+    tree << data
+    tree << right.to_a_inorder unless right.nil?
 
-    return tree
+    tree
   end
   #
   # Post-order displays left node, root node and then right node
   def to_a_postorder
     tree = []
-    tree << self.left.to_a_postorder unless self.left.nil?
-    tree << self.right.to_a_postorder unless self.right.nil?
-    tree << self.data
+    tree << left.to_a_postorder unless left.nil?
+    tree << right.to_a_postorder unless right.nil?
+    tree << data
 
-    return tree
+    tree
   end
 end
