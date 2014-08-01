@@ -120,7 +120,7 @@ describe Node do
       expect(tree.to_a).to eq [9, [4, [2], [6]], [15, [12], [17]]]
     end
 
-    it 'should return an array in in-order (root, left and then right)' do
+    it 'should return an array in in-order (left, root and then right)' do
       expect(tree.to_a(:inorder)).to eq [[[2], 4, [6]], 9, [[12], 15, [17]]]
     end
 
