@@ -1,7 +1,7 @@
 Binary tree (ruby)
 ==================
 It's simply a Ruby implementation of binary tree data structure.
-Just for ~~trying~~ compiling Ruby 2.0 and do some TDD.
+Just for use Ruby 2.1.x and do some TDD.
 
 Implementation from [C Binary Tree with an Example C Code (Search, Delete, Insert Nodes)](http://www.thegeekstuff.com/2013/02/c-binary-tree/)
 
